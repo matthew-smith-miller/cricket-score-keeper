@@ -210,10 +210,10 @@ public class MainActivity extends AppCompatActivity {
     private void switchTeam() {
         View teamAColumn = (View) findViewById(R.id.team_a_column);
         LinearLayout.LayoutParams layoutAParams =
-                (LinearLayout.LayoutParams)  teamAColumn.getLayoutParams();
+                (LinearLayout.LayoutParams) teamAColumn.getLayoutParams();
         View teamBColumn = (View) findViewById(R.id.team_b_column);
         LinearLayout.LayoutParams layoutBParams =
-                (LinearLayout.LayoutParams)  teamBColumn.getLayoutParams();
+                (LinearLayout.LayoutParams) teamBColumn.getLayoutParams();
         View teamABatting = (View) findViewById(R.id.team_a_batting);
         View teamBBatting = (View) findViewById(R.id.team_b_batting);
 

@@ -1,0 +1,631 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <!--Horizontal layout to contain twin columns-->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="horizontal">
+
+        <!--Team 1-->
+        <LinearLayout
+            android:id="@+id/team_a_column"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="100"
+            android:gravity="center_horizontal"
+            android:orientation="vertical">
+
+            <!--Header image-->
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/header_height">
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:src="@drawable/india_banner"
+                    android:scaleType="centerCrop"/>
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="@color/colorIndiaOverlay"/>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="India"
+                    android:textColor="@android:color/white"
+                    android:layout_alignParentBottom="true"
+                    android:layout_alignParentLeft="true"
+                    android:layout_margin="4dp"/>
+            </RelativeLayout>
+
+            <!--Score info block-->
+            <TextView
+                android:id="@+id/team_a_score"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="0/0"
+                android:textSize="36sp"
+                android:fontFamily="sans-serif-light"
+                android:textColor="@color/colorScore"/>
+            <TextView
+                android:id="@+id/team_a_overs"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="(0.0)"
+                android:textSize="24dp"
+                android:fontFamily="sans-serif-light"
+                android:textColor="@color/colorOvers"/>
+
+            <!--Inner LinearLayout for info when batting-->
+            <LinearLayout
+                android:id="@+id/team_a_batting"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:visibility="visible"
+                android:paddingLeft="6dp">
+
+                <!--Run rates-->
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:theme="@style/RunRates"
+                    android:layout_marginTop="12dp"
+                    android:layout_gravity="center_horizontal"
+                    android:visibility="gone">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Required Run Rate: "/>
+                    <TextView
+                        android:id="@+id/team_a_rrr"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="6.00"/>
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Current Run Rate: "
+                        android:layout_marginLeft="12dp"/>
+                    <TextView
+                        android:id="@+id/team_a_crr"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="7.12"/>
+
+
+                </LinearLayout>
+
+                <!--Running-->
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Running"
+                    android:layout_gravity="left"
+                    android:layout_marginTop="12dp"/>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:layout_marginTop="6dp">
+
+                    <Button
+                        android:layout_width="@dimen/ActionButtonWidth"
+                        android:layout_height="@dimen/ActionButtonHeight"
+                        android:theme="@style/Button.ActionButton"
+                        android:text="0"
+                        android:onClick="handleScoringButtonClick"/>
+                    <Button
+                        android:layout_width="@dimen/ActionButtonWidth"
+                        android:layout_height="@dimen/ActionButtonHeight"
+                        android:theme="@style/Button.ActionButton"
+                        android:text="1"
+                        android:onClick="handleScoringButtonClick"/>
+                    <Button
+                        android:layout_width="@dimen/ActionButtonWidth"
+                        android:layout_height="@dimen/ActionButtonHeight"
+                        android:theme="@style/Button.ActionButton"
+                        android:text="2"
+                        android:onClick="handleScoringButtonClick"/>
+                    <Button
+                        android:layout_width="@dimen/ActionButtonWidth"
+                        android:layout_height="@dimen/ActionButtonHeight"
+                        android:theme="@style/Button.ActionButton"
+                        android:text="3"
+                        android:onClick="handleScoringButtonClick"/>
+
+                </LinearLayout>
+                <Button
+                    android:layout_width="@dimen/ActionButtonWidth"
+                    android:layout_height="@dimen/ActionButtonHeight"
+                    android:theme="@style/Button.ActionButton"
+                    android:layout_gravity="left"
+                    android:onClick="togglePopup"
+                    android:text="..."
+                    android:tag="additional_runs"/>
+
+                <!--Boundaries-->
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Boundary"
+                    android:layout_gravity="left"
+                    android:layout_marginTop="12dp"/>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:tag="Boundary"
+                    android:layout_marginTop="6dp">
+
+                    <Button
+                        android:layout_width="@dimen/ActionButtonWidth"
+                        android:layout_height="@dimen/ActionButtonHeight"
+                        android:theme="@style/Button.ActionButton"
+                        android:text="4"
+                        android:onClick="handleScoringButtonClick"/>
+                    <Button
+                        android:layout_width="@dimen/ActionButtonWidth"
+                        android:layout_height="@dimen/ActionButtonHeight"
+                        android:theme="@style/Button.ActionButton"
+                        android:text="6"
+                        android:onClick="handleScoringButtonClick"/>
+                </LinearLayout>
+
+                <!--Extras-->
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Extra"
+                    android:layout_gravity="left"
+                    android:layout_marginTop="12dp"/>
+
+                <Button
+                    android:layout_width="@dimen/ActionButtonWidth"
+                    android:layout_height="@dimen/ActionButtonHeight"
+                    android:theme="@style/Button.Extras"
+                    android:text="..."
+                    android:onClick="togglePopup"
+                    android:tag="extra"/>
+
+                <!--Wicket-->
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Wicket"
+                    android:layout_gravity="left"
+                    android:layout_marginTop="12dp"/>
+
+                <Button
+                    android:layout_width="@dimen/ActionButtonWidth"
+                    android:layout_height="@dimen/ActionButtonHeight"
+                    android:text="W"
+                    android:tag="wicket"
+                    android:theme="@style/Button.Wicket"
+                    android:onClick="togglePopup"/>
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+        <!--Gray line-->
+        <View
+            android:layout_width="1dp"
+            android:layout_height="600dp"
+            android:background="@color/colorLightGray"
+            android:layout_marginTop="6dp"/>
+
+        <!--Team 2-->
+        <LinearLayout
+            android:id="@+id/team_b_column"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="36"
+            android:gravity="center_horizontal"
+            android:orientation="vertical">
+
+            <!--Header image-->
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/header_height">
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:scaleType="centerCrop"
+                    android:src="@drawable/west_indies_banner"/>
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="@color/colorWestIndiesOverlay"/>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="West Indies"
+                    android:textColor="@android:color/white"
+                    android:layout_alignParentBottom="true"
+                    android:layout_alignParentRight="true"
+                    android:layout_margin="4dp"/>
+            </RelativeLayout>
+
+            <!--Score info block-->
+            <TextView
+                android:id="@+id/team_b_score"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="0/0"
+                android:textSize="36sp"
+                android:fontFamily="sans-serif-light"
+                android:textColor="@color/colorScore"/>
+            <TextView
+                android:id="@+id/team_b_overs"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="(0.0)"
+                android:textSize="24dp"
+                android:fontFamily="sans-serif-light"
+                android:textColor="@color/colorOvers"/>
+
+            <!--Inner LinearLayout for info when batting-->
+            <LinearLayout
+                android:id="@+id/team_b_batting"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:visibility="gone"
+                android:paddingLeft="6dp">
+
+                <!--Run rates-->
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:theme="@style/RunRates"
+                    android:layout_marginTop="12dp"
+                    android:layout_gravity="center_horizontal"
+                    android:visibility="gone">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Required Run Rate: "/>
+                    <TextView
+                        android:id="@+id/team_b_rrr"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="6.00"/>
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Current Run Rate: "
+                        android:layout_marginLeft="12dp"/>
+                    <TextView
+                        android:id="@+id/team_b_crr"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="7.12"/>
+
+
+                </LinearLayout>
+
+                <!--Running-->
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Running"
+                    android:layout_gravity="left"
+                    android:layout_marginTop="12dp"/>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:layout_marginTop="6dp">
+
+                    <Button
+                        android:layout_width="@dimen/ActionButtonWidth"
+                        android:layout_height="@dimen/ActionButtonHeight"
+                        android:theme="@style/Button.ActionButton"
+                        android:text="0"
+                        android:onClick="handleScoringButtonClick"/>
+                    <Button
+                        android:layout_width="@dimen/ActionButtonWidth"
+                        android:layout_height="@dimen/ActionButtonHeight"
+                        android:theme="@style/Button.ActionButton"
+                        android:text="1"
+                        android:onClick="handleScoringButtonClick"/>
+                    <Button
+                        android:layout_width="@dimen/ActionButtonWidth"
+                        android:layout_height="@dimen/ActionButtonHeight"
+                        android:theme="@style/Button.ActionButton"
+                        android:text="2"
+                        android:onClick="handleScoringButtonClick"/>
+                    <Button
+                        android:layout_width="@dimen/ActionButtonWidth"
+                        android:layout_height="@dimen/ActionButtonHeight"
+                        android:theme="@style/Button.ActionButton"
+                        android:text="3"
+                        android:onClick="handleScoringButtonClick"/>
+
+                </LinearLayout>
+                <Button
+                    android:layout_width="@dimen/ActionButtonWidth"
+                    android:layout_height="@dimen/ActionButtonHeight"
+                    android:theme="@style/Button.ActionButton"
+                    android:layout_gravity="left"
+                    android:onClick="togglePopup"
+                    android:text="..."
+                    android:tag="additional_runs"/>
+
+                <!--Boundaries-->
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Boundary"
+                    android:layout_gravity="left"
+                    android:layout_marginTop="12dp"/>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:tag="Boundary"
+                    android:layout_marginTop="6dp">
+
+                    <Button
+                        android:layout_width="@dimen/ActionButtonWidth"
+                        android:layout_height="@dimen/ActionButtonHeight"
+                        android:theme="@style/Button.ActionButton"
+                        android:text="4"
+                        android:onClick="handleScoringButtonClick"/>
+                    <Button
+                        android:layout_width="@dimen/ActionButtonWidth"
+                        android:layout_height="@dimen/ActionButtonHeight"
+                        android:theme="@style/Button.ActionButton"
+                        android:text="6"
+                        android:onClick="handleScoringButtonClick"/>
+                </LinearLayout>
+
+                <!--Extras-->
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Extra"
+                    android:layout_gravity="left"
+                    android:layout_marginTop="12dp"/>
+
+                <Button
+                    android:layout_width="@dimen/ActionButtonWidth"
+                    android:layout_height="@dimen/ActionButtonHeight"
+                    android:theme="@style/Button.Extras"
+                    android:text="..."
+                    android:onClick="togglePopup"
+                    android:tag="extra"/>
+
+                <!--Wicket-->
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Wicket"
+                    android:layout_gravity="left"
+                    android:layout_marginTop="12dp"/>
+
+                <Button
+                    android:layout_width="@dimen/ActionButtonWidth"
+                    android:layout_height="@dimen/ActionButtonHeight"
+                    android:text="W"
+                    android:tag="wicket"
+                    android:theme="@style/Button.Wicket"
+                    android:onClick="togglePopup"/>
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+
+
+    <!--Bottom button panel-->
+    <LinearLayout
+        android:id="@+id/expanded_menu"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_above="@id/button_menu"
+        android:layout_marginLeft="24dp"
+        android:layout_marginRight="24dp"
+        android:gravity="center_horizontal"
+        android:theme="@style/Popup"
+        android:visibility="gone">
+        <Button
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="33"
+            android:layout_marginLeft="12dp"
+            android:layout_marginTop="6dp"
+            android:layout_marginBottom="6dp"
+            android:text="Undo"
+            android:onClick="undo"/>
+        <Button
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="33"
+            android:layout_marginLeft="12dp"
+            android:layout_marginTop="6dp"
+            android:layout_marginBottom="6dp"
+            android:text="End Innings"
+            android:onClick="endInnings"/>
+        <Button
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="33"
+            android:layout_marginLeft="12dp"
+            android:layout_marginRight="12dp"
+            android:layout_marginTop="6dp"
+            android:layout_marginBottom="6dp"
+            android:text="Reset"
+            android:onClick="reset"/>
+    </LinearLayout>
+
+    <!--Button to open button panel-->
+    <Button
+        android:id="@+id/button_menu"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAllCaps="false"
+        android:textSize="12sp"
+        android:layout_margin="12dp"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentRight="true"
+        android:theme="@style/Button.Menu"
+        android:onClick="toggleMenu"
+        android:text="Menu"/>
+
+    <!--Additional Runs, Extras, Wickets selector panel-->
+    <LinearLayout
+        android:id="@+id/popup"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:theme="@style/Popup"
+        android:orientation="vertical"
+        android:padding="36dp"
+        android:layout_centerInParent="true"
+        android:visibility="gone">
+
+        <!--Additional runs-->
+        <LinearLayout
+            android:id="@+id/additional_runs"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:visibility="gone">
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center_vertical">
+
+                <Button
+                    android:layout_width="48dp"
+                    android:layout_height="48dp"
+                    android:layout_margin="12dp"
+                    android:text="-"
+                    android:textSize="24sp"
+                    android:onClick="incrementAdditionalRuns"
+                    android:tag="-1"/>
+                <TextView
+                    android:id="@+id/additional_runs_value"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="4"
+                    android:textSize="36sp"
+                    android:fontFamily="sans-serif-light"
+                    android:textColor="@color/colorScore"/>
+                <Button
+                    android:layout_width="48dp"
+                    android:layout_height="48dp"
+                    android:layout_margin="12dp"
+                    android:textSize="24sp"
+                    android:text="+"
+                    android:onClick="incrementAdditionalRuns"
+                    android:tag="1"/>
+
+            </LinearLayout>
+
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Submit"
+                android:layout_gravity="center_horizontal"
+                android:onClick="handleSubmitAdditionalRuns"/>
+        </LinearLayout>
+
+        <!--Extras options-->
+        <LinearLayout
+            android:id="@+id/extras_options"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:visibility="gone">
+            <Button
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:theme="@style/Button.Extras"
+                android:onClick="handleExtraButtonClick"
+                android:text="No-ball"/>
+            <Button
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:theme="@style/Button.Extras"
+                android:onClick="handleExtraButtonClick"
+                android:text="Wide"/>
+            <Button
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:theme="@style/Button.Extras"
+                android:onClick="handleExtraButtonClick"
+                android:text="Bye"/>
+            <Button
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:theme="@style/Button.Extras"
+                android:onClick="handleExtraButtonClick"
+                android:text="Leg-bye"/>
+            <Button
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:theme="@style/Button.Extras"
+                android:onClick="handleExtraButtonClick"
+                android:text="Penalty run"/>
+
+        </LinearLayout>
+
+        <!--Wicket options-->
+        <LinearLayout
+        android:id="@+id/wicket_options"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:visibility="gone">
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:theme="@style/Button.Wicket"
+            android:onClick="handleWicketButtonClick"
+            android:text="Bowled"/>
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:theme="@style/Button.Wicket"
+            android:onClick="handleWicketButtonClick"
+            android:text="Caught"/>
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:theme="@style/Button.Wicket"
+            android:onClick="handleWicketButtonClick"
+            android:text="Run out"/>
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:theme="@style/Button.Wicket"
+            android:onClick="handleWicketButtonClick"
+            android:text="Leg before wicket"/>
+
+    </LinearLayout>
+
+    </LinearLayout>
+
+</RelativeLayout>

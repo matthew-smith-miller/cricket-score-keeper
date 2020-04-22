@@ -1,0 +1,41 @@
+<resources xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <!-- Base application theme. -->
+    <style name="AppTheme" parent="Theme.AppCompat.Light.NoActionBar">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorAccent</item>
+        <item name="colorButtonNormal">@color/colorButtonNormal</item>
+    </style>
+    <style name="Popup" parent="AppTheme">
+        <item name="android:background">@color/colorLightGray</item>
+        <item name="android:textAllCaps">false</item>
+    </style>
+    <style name="Button.Wicket" parent="AppTheme">
+        <item name="backgroundTint">@color/colorWicket</item>
+        <item name="android:textColor">@android:color/white</item>
+        <item name="android:textSize">24sp</item>
+        <item name="fontFamily">sans-serif-light</item>
+    </style>
+    <style name="Button.Menu" parent="AppTheme">
+        <item name="backgroundTint">@color/colorButtonNormal</item>
+    </style>
+    <style name="Button.ActionButton" parent="AppTheme">
+        <item name="android:textSize">24sp</item>
+        <item name="fontFamily">sans-serif-light</item>
+    </style>
+    <style name="Button.Extras" parent="AppTheme">
+        <item name="backgroundTint">@color/colorExtras</item>
+        <item name="android:textSize">24sp</item>
+        <item name="fontFamily">sans-serif-light</item>
+    </style>
+    <dimen name="ActionButtonWidth">72dp</dimen>
+    <dimen name="ActionButtonHeight">72dp</dimen>
+    <dimen name="header_height">60dp</dimen>
+    <style name="RunRates" parent="AppTheme">
+        <item name="android:textColor">@color/colorOvers</item>
+        <item name="android:textSize">8sp</item>
+    </style>
+
+</resources>

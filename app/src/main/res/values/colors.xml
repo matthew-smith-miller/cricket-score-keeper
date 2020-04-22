@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#A1887F</color>
+    <color name="colorPrimaryDark">#3E2723</color>
+    <color name="colorAccent">#B3C6FF</color>
+    <color name="colorScore">#000000</color>
+    <color name="colorOvers">#9E9E9E</color>
+    <color name="colorIndia">#00B8FF</color>
+    <color name="colorIndiaOverlay">#9900B8FF</color>
+    <color name="colorWestIndies">#7C003F</color>
+    <color name="colorWestIndiesOverlay">#997C003F</color>
+    <color name="colorLightGray">#EEEEEE</color>
+    <color name="colorButtonNormal">#FFECB3</color>
+    <color name="colorBoundary">#FF8F00</color>
+    <color name="colorWicket">#B00020</color>
+    <color name="colorExtras">#8DF66A</color>
+</resources>

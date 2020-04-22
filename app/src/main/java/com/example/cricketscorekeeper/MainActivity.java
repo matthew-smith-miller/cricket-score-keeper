@@ -74,12 +74,12 @@ public class MainActivity extends AppCompatActivity {
     private void updateDisplay() {
         TextView teamAScoreView = (TextView) findViewById(R.id.team_a_score);
         TextView teamAOversView = (TextView) findViewById(R.id.team_a_overs);
-        TextView teamARequiredRunRate = (TextView) findViewById(R.id.team_a_rrr);
-        TextView teamACurrentRunRate = (TextView) findViewById(R.id.team_a_crr);
+        //TextView teamARequiredRunRate = (TextView) findViewById(R.id.team_a_rrr);
+        //TextView teamACurrentRunRate = (TextView) findViewById(R.id.team_a_crr);
         TextView teamBScoreView = (TextView) findViewById(R.id.team_b_score);
         TextView teamBOversView = (TextView) findViewById(R.id.team_b_overs);
-        TextView teamBRequiredRunRate = (TextView) findViewById(R.id.team_b_rrr);
-        TextView teamBCurrentRunRate = (TextView) findViewById(R.id.team_b_crr);
+        //TextView teamBRequiredRunRate = (TextView) findViewById(R.id.team_b_rrr);
+        //TextView teamBCurrentRunRate = (TextView) findViewById(R.id.team_b_crr);
         teamAScoreView.setText(teamAScore + "/" + teamAWickets);
         teamBScoreView.setText(teamBScore + "/" + teamBWickets);
         teamAOversView.setText(calculateOvers(teamABalls));

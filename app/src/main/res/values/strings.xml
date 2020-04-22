@@ -1,3 +1,35 @@
 <resources>
     <string name="app_name">Cricket Score Keeper</string>
+    <string name="menu">Menu</string>
+    <string name="reset">Reset</string>
+    <string name="end_innings">End Innings</string>
+    <string name="undo">Undo</string>
+    <string name="wicket">Wicket</string>
+    <string name="w">W</string>
+    <string name="ellipse">...</string>
+    <string name="extra">Extra</string>
+    <string name="_6">6</string>
+    <string name="_4">4</string>
+    <string name="boundary">Boundary</string>
+    <string name="_3">3</string>
+    <string name="_2">2</string>
+    <string name="_1">1</string>
+    <string name="_0">0</string>
+    <string name="running">Running</string>
+    <string name="starting_score">0/0</string>
+    <string name="starting_overs">(0.0)</string>
+    <string name="west_indies">West Indies</string>
+    <string name="plus">+</string>
+    <string name="minus">-</string>
+    <string name="submit">Submit</string>
+    <string name="no_ball">No-ball</string>
+    <string name="wide">Wide</string>
+    <string name="bye">Bye</string>
+    <string name="leg_bye">Leg-bye</string>
+    <string name="penalty_run">Penalty run</string>
+    <string name="bowled">Bowled</string>
+    <string name="caught">Caught</string>
+    <string name="run_out">Run out</string>
+    <string name="leg_before_wicket">Leg before wicket</string>
+    <string name="india">India</string>
 </resources>

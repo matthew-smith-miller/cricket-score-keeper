@@ -38,7 +38,7 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="India"
+                    android:text="@string/india"
                     android:textColor="@android:color/white"
                     android:layout_alignParentBottom="true"
                     android:layout_alignParentLeft="true"
@@ -50,7 +50,7 @@
                 android:id="@+id/team_a_score"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="0/0"
+                android:text="@string/starting_score"
                 android:textSize="36sp"
                 android:fontFamily="sans-serif-light"
                 android:textColor="@color/colorScore"/>
@@ -58,8 +58,8 @@
                 android:id="@+id/team_a_overs"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="(0.0)"
-                android:textSize="24dp"
+                android:text="@string/starting_overs"
+                android:textSize="24sp"
                 android:fontFamily="sans-serif-light"
                 android:textColor="@color/colorOvers"/>
 
@@ -109,7 +109,7 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Running"
+                    android:text="@string/running"
                     android:layout_gravity="left"
                     android:layout_marginTop="12dp"/>
 
@@ -123,25 +123,25 @@
                         android:layout_width="@dimen/ActionButtonWidth"
                         android:layout_height="@dimen/ActionButtonHeight"
                         android:theme="@style/Button.ActionButton"
-                        android:text="0"
+                        android:text="@string/_0"
                         android:onClick="handleScoringButtonClick"/>
                     <Button
                         android:layout_width="@dimen/ActionButtonWidth"
                         android:layout_height="@dimen/ActionButtonHeight"
                         android:theme="@style/Button.ActionButton"
-                        android:text="1"
+                        android:text="@string/_1"
                         android:onClick="handleScoringButtonClick"/>
                     <Button
                         android:layout_width="@dimen/ActionButtonWidth"
                         android:layout_height="@dimen/ActionButtonHeight"
                         android:theme="@style/Button.ActionButton"
-                        android:text="2"
+                        android:text="@string/_2"
                         android:onClick="handleScoringButtonClick"/>
                     <Button
                         android:layout_width="@dimen/ActionButtonWidth"
                         android:layout_height="@dimen/ActionButtonHeight"
                         android:theme="@style/Button.ActionButton"
-                        android:text="3"
+                        android:text="@string/_3"
                         android:onClick="handleScoringButtonClick"/>
 
                 </LinearLayout>
@@ -151,14 +151,14 @@
                     android:theme="@style/Button.ActionButton"
                     android:layout_gravity="left"
                     android:onClick="togglePopup"
-                    android:text="..."
+                    android:text="@string/ellipse"
                     android:tag="additional_runs"/>
 
                 <!--Boundaries-->
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Boundary"
+                    android:text="@string/boundary"
                     android:layout_gravity="left"
                     android:layout_marginTop="12dp"/>
 
@@ -173,13 +173,13 @@
                         android:layout_width="@dimen/ActionButtonWidth"
                         android:layout_height="@dimen/ActionButtonHeight"
                         android:theme="@style/Button.ActionButton"
-                        android:text="4"
+                        android:text="@string/_4"
                         android:onClick="handleScoringButtonClick"/>
                     <Button
                         android:layout_width="@dimen/ActionButtonWidth"
                         android:layout_height="@dimen/ActionButtonHeight"
                         android:theme="@style/Button.ActionButton"
-                        android:text="6"
+                        android:text="@string/_6"
                         android:onClick="handleScoringButtonClick"/>
                 </LinearLayout>
 
@@ -187,7 +187,7 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Extra"
+                    android:text="@string/extra"
                     android:layout_gravity="left"
                     android:layout_marginTop="12dp"/>
 
@@ -195,7 +195,7 @@
                     android:layout_width="@dimen/ActionButtonWidth"
                     android:layout_height="@dimen/ActionButtonHeight"
                     android:theme="@style/Button.Extras"
-                    android:text="..."
+                    android:text="@string/ellipse"
                     android:onClick="togglePopup"
                     android:tag="extra"/>
 
@@ -203,14 +203,14 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Wicket"
+                    android:text="@string/wicket"
                     android:layout_gravity="left"
                     android:layout_marginTop="12dp"/>
 
                 <Button
                     android:layout_width="@dimen/ActionButtonWidth"
                     android:layout_height="@dimen/ActionButtonHeight"
-                    android:text="W"
+                    android:text="@string/w"
                     android:tag="wicket"
                     android:theme="@style/Button.Wicket"
                     android:onClick="togglePopup"/>
@@ -251,7 +251,7 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="West Indies"
+                    android:text="@string/west_indies"
                     android:textColor="@android:color/white"
                     android:layout_alignParentBottom="true"
                     android:layout_alignParentRight="true"
@@ -263,7 +263,7 @@
                 android:id="@+id/team_b_score"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="0/0"
+                android:text="@string/starting_score"
                 android:textSize="36sp"
                 android:fontFamily="sans-serif-light"
                 android:textColor="@color/colorScore"/>
@@ -271,8 +271,8 @@
                 android:id="@+id/team_b_overs"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="(0.0)"
-                android:textSize="24dp"
+                android:text="@string/starting_overs"
+                android:textSize="24sp"
                 android:fontFamily="sans-serif-light"
                 android:textColor="@color/colorOvers"/>
 
@@ -322,7 +322,7 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Running"
+                    android:text="@string/running"
                     android:layout_gravity="left"
                     android:layout_marginTop="12dp"/>
 
@@ -336,25 +336,25 @@
                         android:layout_width="@dimen/ActionButtonWidth"
                         android:layout_height="@dimen/ActionButtonHeight"
                         android:theme="@style/Button.ActionButton"
-                        android:text="0"
+                        android:text="@string/_0"
                         android:onClick="handleScoringButtonClick"/>
                     <Button
                         android:layout_width="@dimen/ActionButtonWidth"
                         android:layout_height="@dimen/ActionButtonHeight"
                         android:theme="@style/Button.ActionButton"
-                        android:text="1"
+                        android:text="@string/_1"
                         android:onClick="handleScoringButtonClick"/>
                     <Button
                         android:layout_width="@dimen/ActionButtonWidth"
                         android:layout_height="@dimen/ActionButtonHeight"
                         android:theme="@style/Button.ActionButton"
-                        android:text="2"
+                        android:text="@string/_2"
                         android:onClick="handleScoringButtonClick"/>
                     <Button
                         android:layout_width="@dimen/ActionButtonWidth"
                         android:layout_height="@dimen/ActionButtonHeight"
                         android:theme="@style/Button.ActionButton"
-                        android:text="3"
+                        android:text="@string/_3"
                         android:onClick="handleScoringButtonClick"/>
 
                 </LinearLayout>
@@ -364,14 +364,14 @@
                     android:theme="@style/Button.ActionButton"
                     android:layout_gravity="left"
                     android:onClick="togglePopup"
-                    android:text="..."
+                    android:text="@string/ellipse"
                     android:tag="additional_runs"/>
 
                 <!--Boundaries-->
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Boundary"
+                    android:text="@string/boundary"
                     android:layout_gravity="left"
                     android:layout_marginTop="12dp"/>
 
@@ -386,13 +386,13 @@
                         android:layout_width="@dimen/ActionButtonWidth"
                         android:layout_height="@dimen/ActionButtonHeight"
                         android:theme="@style/Button.ActionButton"
-                        android:text="4"
+                        android:text="@string/_4"
                         android:onClick="handleScoringButtonClick"/>
                     <Button
                         android:layout_width="@dimen/ActionButtonWidth"
                         android:layout_height="@dimen/ActionButtonHeight"
                         android:theme="@style/Button.ActionButton"
-                        android:text="6"
+                        android:text="@string/_6"
                         android:onClick="handleScoringButtonClick"/>
                 </LinearLayout>
 
@@ -400,7 +400,7 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Extra"
+                    android:text="@string/extra"
                     android:layout_gravity="left"
                     android:layout_marginTop="12dp"/>
 
@@ -408,7 +408,7 @@
                     android:layout_width="@dimen/ActionButtonWidth"
                     android:layout_height="@dimen/ActionButtonHeight"
                     android:theme="@style/Button.Extras"
-                    android:text="..."
+                    android:text="@string/ellipse"
                     android:onClick="togglePopup"
                     android:tag="extra"/>
 
@@ -416,14 +416,14 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Wicket"
+                    android:text="@string/wicket"
                     android:layout_gravity="left"
                     android:layout_marginTop="12dp"/>
 
                 <Button
                     android:layout_width="@dimen/ActionButtonWidth"
                     android:layout_height="@dimen/ActionButtonHeight"
-                    android:text="W"
+                    android:text="@string/w"
                     android:tag="wicket"
                     android:theme="@style/Button.Wicket"
                     android:onClick="togglePopup"/>
@@ -455,7 +455,7 @@
             android:layout_marginLeft="12dp"
             android:layout_marginTop="6dp"
             android:layout_marginBottom="6dp"
-            android:text="Undo"
+            android:text="@string/undo"
             android:onClick="undo"/>
         <Button
             android:layout_width="0dp"
@@ -464,7 +464,7 @@
             android:layout_marginLeft="12dp"
             android:layout_marginTop="6dp"
             android:layout_marginBottom="6dp"
-            android:text="End Innings"
+            android:text="@string/end_innings"
             android:onClick="endInnings"/>
         <Button
             android:layout_width="0dp"
@@ -474,7 +474,7 @@
             android:layout_marginRight="12dp"
             android:layout_marginTop="6dp"
             android:layout_marginBottom="6dp"
-            android:text="Reset"
+            android:text="@string/reset"
             android:onClick="reset"/>
     </LinearLayout>
 
@@ -490,7 +490,7 @@
         android:layout_alignParentRight="true"
         android:theme="@style/Button.Menu"
         android:onClick="toggleMenu"
-        android:text="Menu"/>
+        android:text="@string/menu"/>
 
     <!--Additional Runs, Extras, Wickets selector panel-->
     <LinearLayout
@@ -521,7 +521,7 @@
                     android:layout_width="48dp"
                     android:layout_height="48dp"
                     android:layout_margin="12dp"
-                    android:text="-"
+                    android:text="@string/minus"
                     android:textSize="24sp"
                     android:onClick="incrementAdditionalRuns"
                     android:tag="-1"/>
@@ -529,7 +529,7 @@
                     android:id="@+id/additional_runs_value"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="4"
+                    android:text="@string/_4"
                     android:textSize="36sp"
                     android:fontFamily="sans-serif-light"
                     android:textColor="@color/colorScore"/>
@@ -538,7 +538,7 @@
                     android:layout_height="48dp"
                     android:layout_margin="12dp"
                     android:textSize="24sp"
-                    android:text="+"
+                    android:text="@string/plus"
                     android:onClick="incrementAdditionalRuns"
                     android:tag="1"/>
 
@@ -547,7 +547,7 @@
             <Button
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Submit"
+                android:text="@string/submit"
                 android:layout_gravity="center_horizontal"
                 android:onClick="handleSubmitAdditionalRuns"/>
         </LinearLayout>
@@ -564,31 +564,31 @@
                 android:layout_height="match_parent"
                 android:theme="@style/Button.Extras"
                 android:onClick="handleExtraButtonClick"
-                android:text="No-ball"/>
+                android:text="@string/no_ball"/>
             <Button
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:theme="@style/Button.Extras"
                 android:onClick="handleExtraButtonClick"
-                android:text="Wide"/>
+                android:text="@string/wide"/>
             <Button
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:theme="@style/Button.Extras"
                 android:onClick="handleExtraButtonClick"
-                android:text="Bye"/>
+                android:text="@string/bye"/>
             <Button
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:theme="@style/Button.Extras"
                 android:onClick="handleExtraButtonClick"
-                android:text="Leg-bye"/>
+                android:text="@string/leg_bye"/>
             <Button
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:theme="@style/Button.Extras"
                 android:onClick="handleExtraButtonClick"
-                android:text="Penalty run"/>
+                android:text="@string/penalty_run"/>
 
         </LinearLayout>
 
@@ -604,25 +604,25 @@
             android:layout_height="match_parent"
             android:theme="@style/Button.Wicket"
             android:onClick="handleWicketButtonClick"
-            android:text="Bowled"/>
+            android:text="@string/bowled"/>
         <Button
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:theme="@style/Button.Wicket"
             android:onClick="handleWicketButtonClick"
-            android:text="Caught"/>
+            android:text="@string/caught"/>
         <Button
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:theme="@style/Button.Wicket"
             android:onClick="handleWicketButtonClick"
-            android:text="Run out"/>
+            android:text="@string/run_out"/>
         <Button
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:theme="@style/Button.Wicket"
             android:onClick="handleWicketButtonClick"
-            android:text="Leg before wicket"/>
+            android:text="@string/leg_before_wicket"/>
 
     </LinearLayout>
 
